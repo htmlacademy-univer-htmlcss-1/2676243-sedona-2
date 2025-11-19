@@ -1,0 +1,439 @@
+/* ===== БАЗОВЫЕ СТИЛИ ===== */
+
+@font-face {
+  font-family: "PT Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("fonts/ptsans-400.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PT Sans";
+  font-style: normal;
+  font-weight: 700;
+  src: url("fonts/ptsans-700.woff2") format("woff2");
+  font-display: swap;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "PT Sans", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  color: #333333;
+  background-color: #FFFFFF;
+}
+
+/* Центрирование контента */
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+/* Заголовки */
+h1, h2, h3 {
+  font-weight: 700;
+  margin: 0;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  border: 0;
+}
+
+/* ===== ШАПКА ===== */
+
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  height: 70px;
+  padding: 0 60px;
+  box-sizing: border-box;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.navigation-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navigation-list:first-child {
+  margin-right: auto;
+}
+
+.navigation-item {
+  margin-right: 34px;
+}
+
+.navigation-link {
+  font-weight: 700;
+  text-decoration: none;
+  color: #000000;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.navigation-link:hover {
+  opacity: 0.7;
+}
+
+/* ===== HERO ===== */
+
+.hero {
+  position: relative;
+  text-align: center;
+  width: 1200;
+  height: 767;
+  background-image: url("images\index-background.jpg");
+  angle: 0 deg;
+  opacity: 1;
+  top: 64px;
+}
+
+.welcome {
+  position: absolute;
+  width: 458px;
+  height: 352px;
+  top: 51px;
+  left: 371px;
+  opacity: 1;
+  transform: rotate(0deg);
+  z-index: 1; /* Добавляем z-index чтобы быть уверенным */
+}
+
+
+.divider {
+  width: 1200;
+  height: 57;
+  angle: 0 deg;
+  opacity: 1;
+  position: relative; /* Добавляем для корректного позиционирования */
+  z-index: 2; /* Фон имеет меньший z-index */
+}
+
+
+/* ===== INTRO ===== */
+
+.intro {
+  text-align: center;
+  padding: 50px 20px 60px;
+}
+
+.intro-title {
+  font-size: 21px;
+  line-height: 26px;
+  text-transform: uppercase;
+  color: #000000;
+  max-width: 720px;
+  margin: 0 auto 20px;
+}
+
+.intro-text {
+  color: #333333;
+  margin: 0;
+}
+
+/* ===== ПРЕИМУЩЕСТВА ===== */
+
+.advantages {
+  width: 100%;
+  text-align: center;
+}
+
+.advantages-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Общие стили для ячеек */
+.advantages-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  color: #ffffff;
+  background-color: #81B3D2;
+  padding: 60px 40px;
+}
+
+/* Блоки с изображениями */
+.advantages-item:nth-child(2),
+.advantages-item:nth-child(5) {
+  padding: 0;
+  background: none;
+}
+
+/* Изображения преимуществ */
+.advantages-item:nth-child(2) img,
+.advantages-item:nth-child(5) img {
+  width: 800px;
+  height: 385px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
+/* Белый текст на голубом фоне */
+.advantages-item:nth-child(1),
+.advantages-item:nth-child(4),
+.advantages-item:nth-child(6) {
+  background-color: #81B3D2;
+  color: #ffffff;
+}
+
+/* Белый фон, чёрный текст */
+.advantages-item:nth-child(3) {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Заголовки и декоративная линия */
+.advantages-title {
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.advantages-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.3);
+  margin: 15px auto 0;
+}
+
+/* Для белых блоков — тёмная линия */
+.advantages-item:nth-child(3) .advantages-title::after {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Текст описания */
+.advantages-description {
+  font-size: 16px;
+  line-height: 24px;
+  max-width: 260px;
+  margin: 10px 0 0;
+}
+
+/* ===== ГОРОД ===== */
+
+.city-description {
+  background-color: #81B3D2;
+  color: #ffffff;
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.city-title {
+  text-transform: uppercase;
+  font-size: 21px;
+  line-height: 26px;
+  margin-bottom: 10px;
+}
+
+.city-text {
+  margin: 0;
+}
+
+/* ===== СЕРВИСЫ ===== */
+
+.services {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #FFFFFF;
+}
+
+.services-title {
+  font-size: 21px;
+  line-height: 26px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.services-text {
+  margin-bottom: 40px;
+  color: #333333;
+}
+
+.services-list {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.services-item {
+  flex: 1;
+  background-color: #F2F2F2;
+  padding: 30px 20px;
+  border-radius: 8px;
+}
+
+.services-icon img {
+  margin-bottom: 20px;
+}
+
+.services-item-title {
+  text-transform: uppercase;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.services-item-description {
+  margin: 0;
+  color: #333333;
+}
+
+/* ===== ПОИСК ГОСТИНИЦ ===== */
+
+.hotel-search {
+  text-align: center;
+  padding: 70px 20px;
+  background-color: #FFFFFF;
+}
+
+.hotel-search-title {
+  text-transform: uppercase;
+  font-size: 21px;
+  line-height: 26px;
+  margin-bottom: 10px;
+}
+
+.hotel-search-text {
+  margin-bottom: 40px;
+  color: #333333;
+}
+
+.button {
+  display: inline-block;
+  padding: 16px 32px;
+  background-color: #756257;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #615048;
+}
+
+/* ===== РАССЫЛКА ===== */
+
+.newsletter {
+  background-color: #81B3D2;
+  color: #ffffff;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.newsletter-title {
+  text-transform: uppercase;
+  font-size: 21px;
+  line-height: 26px;
+  margin-bottom: 10px;
+}
+
+.newsletter-text {
+  margin-bottom: 30px;
+}
+
+.newsletter-form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.newsletter-input {
+  padding: 12px 16px;
+  border: none;
+  border-radius: 4px;
+  max-width: 300px;
+  flex-grow: 1;
+}
+
+.newsletter-button {
+  padding: 12px 24px;
+  background-color: #756257;
+  color: #ffffff;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.newsletter-button:hover {
+  background-color: #615048;
+}
+
+/* ===== ПОДВАЛ ===== */
+
+.page-footer {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 60px;
+  box-sizing: border-box;
+}
+
+.footer-social-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 10px;
+}
+
+.footer-social-item img {
+  width: 24px;
+  height: 24px;
+}
+
+.contact-phone {
+  font-weight: 700;
+  font-size: 18px;
+  color: #000000;
+}
+
+.htmlacademy-link img {
+  height: 40px;
+  width: auto;
+  display: block;
+}
